@@ -9,13 +9,35 @@
   []
   (try
     (binding [*read-eval* false]
-      (read-string (str (slurp "profiles.clj"))))
+      (read-string (str (slurp (io/resource "private/config.clj")))))
     (catch Exception e (.getMessage e))))
 
-(defonce db (get-in (get-config) [:provided :env :database-url]))
-(defonce config (get-in (get-config) [:provided :config]))
-(defonce SALT "897sdn9j98u98kj")                                ; encryption salt for DB
-(defonce KEY (byte-array 16))
+(def config (get-config))
+
+(def db {:classname                       (:db-class config)
+         :subprotocol                     (:db-protocol config)
+         :subname                         (:db-name config)
+         :user                            (:db-user config)
+         :password                        (:db-pwd config)
+         :useSSL                          false
+         :useTimezone                     true
+         :useLegacyDatetimeCode           false
+         :serverTimezone                  "UTC"
+         :noTimezoneConversionForTimeType true
+         :dumpQueriesOnException          true
+         :autoDeserialize                 true
+         :useDirectRowUnpack              false
+         :cachePrepStmts                  true
+         :cacheCallableStmts              true
+         :cacheServerConfiguration        true
+         :useLocalSessionState            true
+         :elideSetAutoCommits             true
+         :alwaysSendSetIsolation          false
+         :enableQueryTimeouts             false
+         :zeroDateTimeBehavior            "CONVERT_TO_NULL"}) ; Database connection
+
+(def SALT "897sdn9j98u98kj")                                ; encryption salt for DB                            ; encryption salt for DB
+(def KEY (byte-array 16))
 
 (defn aes-in
   "Encrypt a value MySQL"
@@ -362,3 +384,6 @@
         (generate-string {:success "Eliminado con éxito!"})
         (generate-string {:error "Incapaz de eliminar!"})))
     (catch Exception e (.getMessage e))))
+
+(comment
+  (:port config))

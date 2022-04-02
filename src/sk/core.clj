@@ -49,3 +49,6 @@
                           (assoc-in [:session :cookie-attrs] {:max-age 28800})
                           (assoc-in [:session :cookie-name] "LS"))))
    {:port (:port config)}))
+
+(comment
+  (:port config))
