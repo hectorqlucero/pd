@@ -1,10 +1,10 @@
 (ns sk.routes
   (:require [cheshire.core :refer [generate-string]]
-            [compojure.core :refer [GET POST defroutes]]
+            [compojure.core :refer [defroutes GET POST]]
+            [sk.handlers.eventos.handler :as eventos]
             [sk.handlers.home.handler :as home]
             [sk.handlers.registrar.handler :as registrar]
-            [sk.handlers.tref.handler :as table_ref]
-            [sk.handlers.eventos.handler :as eventos]))
+            [sk.handlers.tref.handler :as table_ref]))
 
 (defroutes open-routes
   ;; Start table_ref

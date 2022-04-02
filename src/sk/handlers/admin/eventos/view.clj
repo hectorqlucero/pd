@@ -1,9 +1,8 @@
 (ns sk.handlers.admin.eventos.view
-  (:require
-   [hiccup.page :refer [include-js]]
-   [ring.util.anti-forgery :refer [anti-forgery-field]]
-   [sk.models.util :refer
-    [build-dialog build-dialog-buttons build-field build-table build-toolbar build-image-field build-image-field-script]]))
+  (:require [hiccup.page :refer [include-js]]
+            [ring.util.anti-forgery :refer [anti-forgery-field]]
+            [sk.models.util :refer
+             [build-dialog build-dialog-buttons build-field build-image-field build-image-field-script build-table build-toolbar]]))
 
 (defn dialog-fields []
   (list

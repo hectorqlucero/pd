@@ -5,11 +5,11 @@
             [noir.session :as session]
             [noir.util.crypt :as crypt]
             [ring.util.anti-forgery :refer [anti-forgery-field]]
-            [sk.handlers.home.view :refer [main-view login-script login-view]]
+            [sk.handlers.home.view :refer [login-script login-view main-view]]
             [sk.layout :refer [application error-404]]
-            [sk.user :as user]
-            [sk.models.crud :refer [Query db]]
-            [sk.models.util :refer [get-session-id]]))
+            [sk.models.crud :refer [db Query]]
+            [sk.models.util :refer [get-session-id]]
+            [sk.user :as user]))
 
 (defn main
   [_]

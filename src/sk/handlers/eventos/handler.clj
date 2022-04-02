@@ -1,14 +1,13 @@
 (ns sk.handlers.eventos.handler
   (:require [sk.handlers.eventos.sql :refer [eventos-sql]]
-            [sk.handlers.eventos.view
-             :refer
-             [display-eventos-scripts display-eventos-view eventos-scripts eventos-view]]
+            [sk.handlers.eventos.view :refer [display-eventos-scripts
+                                              display-eventos-view eventos-scripts
+                                              eventos-view]]
             [sk.layout :refer [application]]
-            [sk.models.crud :refer [Query db]]
-            [sk.user :as user]
-            [sk.models.util
-             :refer
-             [current_year get-month-name get-session-id parse-int zpl]]))
+            [sk.models.crud :refer [db Query]]
+            [sk.models.util :refer [current_year get-month-name get-session-id
+                                    parse-int zpl]]
+            [sk.user :as user]))
 
 (defn eventos [_]
   (let [title   "Eventos"

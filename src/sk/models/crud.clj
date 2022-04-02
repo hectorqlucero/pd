@@ -1,9 +1,9 @@
 (ns sk.models.crud
   (:require [cheshire.core :refer [generate-string]]
             [clojure.java.io :as io]
-            [sk.user :as user]
             [clojure.java.jdbc :as j]
-            [clojure.string :as st])
+            [clojure.string :as st]
+            [sk.user :as user])
   (:import java.text.SimpleDateFormat))
 
 (def db {:classname                       (:db-class user/config)

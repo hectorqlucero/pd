@@ -1,7 +1,7 @@
 (ns sk.proutes
-  (:require [compojure.core :refer [GET POST defroutes]]
-            [sk.handlers.admin.users.handler :as users]
-            [sk.handlers.admin.eventos.handler :as eventos]))
+  (:require [compojure.core :refer [defroutes GET POST]]
+            [sk.handlers.admin.eventos.handler :as eventos]
+            [sk.handlers.admin.users.handler :as users]))
 
 (defroutes proutes
   ;; Start users

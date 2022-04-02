@@ -1,9 +1,9 @@
 (ns sk.handlers.admin.eventos.handler
-  (:require [sk.models.crud :refer [build-form-row build-form-save build-form-delete]]
-            [sk.models.grid :refer [build-grid]]
+  (:require [sk.handlers.admin.eventos.view :refer [eventos-scripts eventos-view]]
             [sk.layout :refer [application]]
-            [sk.models.util :refer [get-session-id current_year user-level]]
-            [sk.handlers.admin.eventos.view :refer [eventos-view eventos-scripts]]))
+            [sk.models.crud :refer [build-form-delete build-form-row build-form-save]]
+            [sk.models.grid :refer [build-grid]]
+            [sk.models.util :refer [current_year get-session-id user-level]]))
 
 (defn eventos [_]
   (let [title "Eventos - Semana"

@@ -1,7 +1,7 @@
 (ns sk.user
-  (:require [ragtime.jdbc :as jdbc]
-            [ragtime.repl :as repl]
-            [clojure.java.io :as io]))
+  (:require [clojure.java.io :as io]
+            [ragtime.jdbc :as jdbc]
+            [ragtime.repl :as repl]))
 
 (defn get-config
   []
