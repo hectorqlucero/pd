@@ -5,38 +5,20 @@
             [noir.session :as session]
             [noir.util.crypt :as crypt]
             [ring.util.anti-forgery :refer [anti-forgery-field]]
-            [sk.handlers.home.view :refer [login-script login-view]]
+            [sk.handlers.home.view :refer [main-view login-script login-view]]
             [sk.layout :refer [application error-404]]
             [sk.user :as user]
             [sk.models.crud :refer [Query db]]
             [sk.models.util :refer [get-session-id]]))
-
-;; Start Main
-(def main-sql
-  "SELECT
-   username
-   FROM users
-   WHERE id = ?")
-
-(defn get-main-title
-  []
-  (try
-    (let [id (get-session-id)
-          title (if (> id 0)
-                  (str "<strong>Usuario:</strong> " (:username (first (Query db [main-sql id]))))
-                  "Clic en <strong>Conectar</strong> para accesar el sitio.")]
-      title)
-    (catch Exception e (.getMessage e))))
 
 (defn main
   [_]
   (try
     (let [title (:site user/config)
           ok (get-session-id)
-          content [:div [:span {:style "margin-left:20px;"} (get-main-title)]]]
+          content (main-view)]
       (application title ok nil content))
     (catch Exception e (.getMessage e))))
-;; End Main
 
 ;; Start Login
 (defn login
