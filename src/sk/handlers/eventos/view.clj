@@ -1,5 +1,5 @@
 (ns sk.handlers.eventos.view
-  (:require [sk.models.crud :refer [config]]))
+  (:require [sk.user :as user]))
 
 (defn build-options [month-name year month]
   {:width   152
@@ -83,7 +83,7 @@
   [:h2 (:descripcion_corta row)
    [:div.card
     [:div.card-body {:style "font-size:.5em;"}
-     (line-rr nil [:img.card-img-top.mb-3.w-auto {:src (str (:path config) (:imagen row))
+     (line-rr nil [:img.card-img-top.mb-3.w-auto {:src (str (:path user/config) (:imagen row))
                                                   :style "max-width:100%;height:auto;"
                                                   :alt ""
                                                   :onError nil}])
@@ -104,3 +104,6 @@
 (defn display-eventos-scripts [_ _]
   (list
    [:script nil]))
+
+(comment
+  (:path user/config))

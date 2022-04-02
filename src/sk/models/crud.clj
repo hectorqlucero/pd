@@ -1,24 +1,16 @@
 (ns sk.models.crud
   (:require [cheshire.core :refer [generate-string]]
             [clojure.java.io :as io]
+            [sk.user :as user]
             [clojure.java.jdbc :as j]
             [clojure.string :as st])
   (:import java.text.SimpleDateFormat))
 
-(defn get-config
-  []
-  (try
-    (binding [*read-eval* false]
-      (read-string (str (slurp (io/resource "private/config.clj")))))
-    (catch Exception e (.getMessage e))))
-
-(def config (get-config))
-
-(def db {:classname                       (:db-class config)
-         :subprotocol                     (:db-protocol config)
-         :subname                         (:db-name config)
-         :user                            (:db-user config)
-         :password                        (:db-pwd config)
+(def db {:classname                       (:db-class user/config)
+         :subprotocol                     (:db-protocol user/config)
+         :subname                         (:db-name user/config)
+         :user                            (:db-user user/config)
+         :password                        (:db-pwd user/config)
          :useSSL                          false
          :useTimezone                     true
          :useLegacyDatetimeCode           false
@@ -354,7 +346,7 @@
           file (:file params)
           postvars (dissoc (build-postvars table params) :file)
           the-id (str (get-id id postvars table))
-          path (str (:uploads config) folder "/")
+          path (str (:uploads user/config) folder "/")
           image-name (crud-upload-image table file the-id path)
           postvars (assoc postvars :imagen image-name :id the-id)
           result (Save db (keyword table) postvars ["id = ?" the-id])]
@@ -386,4 +378,4 @@
     (catch Exception e (.getMessage e))))
 
 (comment
-  (:port config))
+  (:port user/config))

@@ -4,7 +4,8 @@
              :refer
              [display-eventos-scripts display-eventos-view eventos-scripts eventos-view]]
             [sk.layout :refer [application]]
-            [sk.models.crud :refer [Query config db]]
+            [sk.models.crud :refer [Query db]]
+            [sk.user :as user]
             [sk.models.util
              :refer
              [current_year get-month-name get-session-id parse-int zpl]]))
@@ -22,5 +23,5 @@
         js      (display-eventos-scripts year month)
         rows    (Query db [eventos-sql year month])
         rows    (map #(assoc % :day (zpl (% :day) 2)) rows)
-        content (display-eventos-view title year month rows (str (config :path) "eventos/"))]
+        content (display-eventos-view title year month rows (str (user/config :path) "eventos/"))]
     (application title ok js content)))

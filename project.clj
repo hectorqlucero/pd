@@ -19,6 +19,7 @@
                  [org.clojure/java.jdbc "0.7.12"]
                  [org.clojure/data.codec "0.1.1"]
                  [mysql/mysql-connector-java "8.0.28"]
+                 [ragtime "0.8.0"]
                  [ring/ring-core "1.9.5" :exclusions [ring/ring-codec commons-logging commons-codec]]]
   :main ^:skip-aot sk.core
   :aot [sk.core]
@@ -30,4 +31,6 @@
          :auto-reload? true
          :auto-refresh? false}
   :resources-paths ["shared" "resources"]
+  :aliases {"migrate" ["run" "-m" "sk.user/migrate"]
+            "rollback" ["run" "-m" "sk.user/rollback"]}
   :profiles {:uberjar {:aot :all}})
