@@ -1,3 +1,21 @@
+body {
+  background-color:#ff69b4;
+}
+footer {
+  background-color:#ff69b4;
+}
+.easyui-panel {
+  background-color:#ff69b4;
+}
+.bg-secondary {
+  background-color:#ff69b4;
+}
+.container-fluid {
+  background-color:#ff69b4;
+}
+#f-layout {
+  background-color:#ff69b4;
+}
 .loader,
 .loader:after {
   border-radius: 50%;

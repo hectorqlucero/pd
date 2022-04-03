@@ -4,7 +4,10 @@
             [sk.handlers.eventos.handler :as eventos]
             [sk.handlers.home.handler :as home]
             [sk.handlers.registrar.handler :as registrar]
-            [sk.handlers.tref.handler :as table_ref]))
+            [sk.handlers.tref.handler :as table_ref]
+            [sk.handlers.historia.handler :as historia]
+            [sk.handlers.mision.handler :as mision]
+            [sk.handlers.vision.handler :as vision]))
 
 (defroutes open-routes
   ;; Start table_ref
@@ -35,4 +38,18 @@
 
   ;; Start eventos
   (GET "/eventos/list" request [] (eventos/eventos request))
-  (GET "/eventos/list/:year/:month" [year month] (eventos/display-eventos year month)))
+  (GET "/eventos/list/:year/:month" [year month] (eventos/display-eventos year month))
+  ;; End eventos
+
+  ;; Start historia
+  (GET "/historia" request [] (historia/historia request))
+  ;; End historia
+
+  ;; Start mision
+  (GET "/mision" request [] (mision/mision request))
+  ;; End mision
+
+  ;; Start vision
+  (GET "/vision" request [] (vision/vision request))
+  ;; End vision
+  )

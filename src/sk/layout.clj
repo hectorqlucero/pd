@@ -6,20 +6,33 @@
 
 (defn build-admin []
   (list
-   [:a.dropdown-item {:href "/admin/eventos"} "Eventos"]
+   [:a.dropdown-item {:href "/admin/historia"} "Historia"]
+   [:a.dropdown-item {:href "/admin/mision"} "Mision"]
+   [:a.dropdown-item {:href "/admin/vision"} "Vision"]
    [:a.dropdown-item {:href "/admin/users"} "Usuarios"]))
 
 (defn menus-private []
   (list
-   [:nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.fixed-top
-    [:a.navbar-brand {:href "/"} (:site-name user/config)]
+   [:nav.navbar.navbar-expand-sm.navbar-light.bg-light.fixed-top
+    [:a.navbar-brand {:href "/"}
+     [:img.rounded-circle {:src "/images/logo.jpeg"
+                           :alt (:site-name user/config)
+                           :style "width:40px;"}]]
     [:button.navbar-toggler {:type "button"
                              :data-toggle "collapse"
                              :data-target "#collapsibleNavbar"}
      [:span.navbar-toggler-icon]]
     [:div#collapsibleNavbar.collapse.navbar-collapse
      [:ul.navbar-nav
-      [:li-nav-item [:a.nav-link {:href "/eventos/list"} "Eventos"]]
+      [:li-nav-item [:a.nav-link {:href "/historia"} "Historia"]]
+      [:li-nav-item [:a.nav-link {:href "/mision"} "Misión"]]
+      [:li-nav-item [:a.nav-link {:href "/vision"} "Vision"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Integrantes"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Contacto"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Patrocinadores"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Veterinarias de Apoyo"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Voluntarios"]]
       (when
        (or
         (= (user-level) "A")
@@ -34,21 +47,35 @@
 
 (defn menus-public []
   (list
-   [:nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.fixed-top
-    [:a.navbar-brand {:href "/"} (:site-name user/config)]
+   [:nav.navbar.navbar-expand-sm.navbar-light.bg-light.fixed-top
+    [:a.navbar-brand {:href "/"}
+     [:img.rounded-circle {:src "/images/logo.jpeg"
+                           :alt (:site-name user/config)
+                           :style "width:40px;"}]]
     [:button.navbar-toggler {:type "button"
                              :data-toggle "collapse"
                              :data-target "#collapsibleNavbar"}
      [:span.navbar-toggler-icon]]
     [:div#collapsibleNavbar.collapse.navbar-collapse
      [:ul.navbar-nav
-      [:li-nav-item [:a.nav-link {:href "/eventos/list"} "Eventos"]]
+      [:li-nav-item [:a.nav-link {:href "/historia"} "Historia"]]
+      [:li-nav-item [:a.nav-link {:href "/mision"} "Misión"]]
+      [:li-nav-item [:a.nav-link {:href "/vision"} "Vision"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Integrantes"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Contacto"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Patrocinadores"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Veterinarias de Apoyo"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Voluntarios"]]
       [:li.nav-item [:a.nav-link {:href "/home/login"} "Conectar"]]]]]))
 
 (defn menus-none []
   (list
-   [:nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.fixed-top
-    [:a.navbar-brand {:href "#"} (:site-name user/config)]
+   [:nav.navbar.navbar-expand-sm.navbar-light.bg-light.fixed-top
+    [:a.navbar-brand {:href "/"}
+     [:img.rounded-circle {:src "/images/logo.jpeg"
+                           :alt (:site-name user/config)
+                           :style "width:40px;"}]]
     [:button.navbar-toggler {:type "button"
                              :data-toggle "collapse"
                              :data-target "#collapsibleNavbar"}
@@ -104,8 +131,8 @@
            [:div.easyui-panel {:data-options "fit:true,border:false" :style "padding:5px;"} content]]
           (app-js)
           js]
-         [:footer.bg-secondary.text-center.fixed-bottom
-          [:span  "Copyright &copy" (t/year (t/now)) " Lucero Systems - All Rights Reserved"]]))
+         [:footer#f-layout.bg-secondary.text-center.fixed-bottom {:style "background-color:#ff69b4 !important;"}
+          [:span  "Copyright &copy" (t/year (t/now)) " Pet-Daleando - All Rights Reserved"]]))
 
 (defn error-404 [content return-url]
   (html5 {:ng-app (:site-name user/config) :lang "es"}
@@ -118,15 +145,15 @@
           [:link {:rel "shortcut icon"
                   :type "image/x-icon"
                   :href "data:image/x-icon;,"}]]
-         [:body {:style "width:100vw;height:98vh;border:1px solid #000;"}
-          [:div.container {:style "height:88vh;margin-top:75px;"}
+         [:body {:style "width:100vw;height:98vh;border:1px solid #000;background-color:#ff69b4 !important;"}
+          [:div.container {:style "height:88vh;margin-top:75px;background-color:#ff69b4 !important;"}
            (menus-none)
-           [:div.easyui-panel {:data-options "fit:true,border:false" :style "padding-left:14px;"}
-            [:div
+           [:div.easyui-panel {:data-options "fit:true,border:false" :style "padding-left:14px;background-color:#ff69b4 !important;"}
+            [:div {:style "background-color:#ff69b4 !important;"}
              [:p [:h3 [:b "Mensaje: "]] content]
              [:p [:h3 [:a {:href return-url} "Clic aqui para " [:strong "Continuar"]]]]]]]
 
           (app-js)
           nil]
-         [:footer.bg-secondary.text-center.fixed-bottom
-          [:span  "Copyright &copy" (t/year (t/now)) " Lucero Systems - All Rights Reserved"]]))
+         [:footer#f-layout.bg-secondary.text-center.fixed-bottom {:style "background-color:#ff69b4 !important;"}
+          [:span  "Copyright &copy" (t/year (t/now)) " Pet-Daleando - All Rights Reserved"]]))

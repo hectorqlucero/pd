@@ -1,7 +1,10 @@
 (ns sk.proutes
   (:require [compojure.core :refer [defroutes GET POST]]
             [sk.handlers.admin.eventos.handler :as eventos]
-            [sk.handlers.admin.users.handler :as users]))
+            [sk.handlers.admin.users.handler :as users]
+            [sk.handlers.admin.historia.handler :as historia]
+            [sk.handlers.admin.mision.handler :as mision]
+            [sk.handlers.admin.vision.handler :as vision]))
 
 (defroutes proutes
   ;; Start users
@@ -19,4 +22,28 @@
   (POST "/admin/eventos/save" req [] (eventos/eventos-save req))
   (POST "/admin/eventos/delete" req [] (eventos/eventos-delete req))
   ;; End eventos
+
+  ;; Start historia
+  (GET "/admin/historia"  req [] (historia/historia req))
+  (POST "/admin/historia" req [] (historia/historia-grid req))
+  (GET "/admin/historia/edit/:id" [id] (historia/historia-form id))
+  (POST "/admin/historia/save" req [] (historia/historia-save req))
+  (POST "/admin/historia/delete" req [] (historia/historia-delete req))
+  ;; End historia
+
+  ;; Start mision
+  (GET "/admin/mision"  req [] (mision/mision req))
+  (POST "/admin/mision" req [] (mision/mision-grid req))
+  (GET "/admin/mision/edit/:id" [id] (mision/mision-form id))
+  (POST "/admin/mision/save" req [] (mision/mision-save req))
+  (POST "/admin/mision/delete" req [] (mision/mision-delete req))
+  ;; End mision
+
+  ;; Start vision
+  (GET "/admin/vision"  req [] (vision/vision req))
+  (POST "/admin/vision" req [] (vision/vision-grid req))
+  (GET "/admin/vision/edit/:id" [id] (vision/vision-form id))
+  (POST "/admin/vision/save" req [] (vision/vision-save req))
+  (POST "/admin/vision/delete" req [] (vision/vision-delete req))
+  ;; End vision
   )
