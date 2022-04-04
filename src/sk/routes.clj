@@ -7,7 +7,8 @@
             [sk.handlers.tref.handler :as table_ref]
             [sk.handlers.historia.handler :as historia]
             [sk.handlers.mision.handler :as mision]
-            [sk.handlers.vision.handler :as vision]))
+            [sk.handlers.vision.handler :as vision]
+            [sk.handlers.integrantes.handler :as integrantes]))
 
 (defroutes open-routes
   ;; Start table_ref
@@ -18,6 +19,8 @@
   (GET "/table_ref/get-item/:table/:field/:fname/:fval" [table field fname fval] (table_ref/get-item table field fname fval))
   (GET "/table_ref/get-time" [] (generate-string (table_ref/build-time)))
   (GET "/table_ref/levels" [] (generate-string (table_ref/level-options)))
+  (GET "/table_ref/get-titulo/:id" [id] (table_ref/get-titulo id))
+  (GET "/table_ref/get-titulos" [] (generate-string (table_ref/get-titulos)))
   ;; End table_ref
 
   ;; Start home
@@ -52,4 +55,8 @@
   ;; Start vision
   (GET "/vision" request [] (vision/vision request))
   ;; End vision
+
+  ;; Start integrantes
+  (GET "/integrantes" request [] (integrantes/integrantes request))
+  ;; End integrantes
   )

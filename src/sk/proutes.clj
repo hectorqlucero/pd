@@ -4,7 +4,9 @@
             [sk.handlers.admin.users.handler :as users]
             [sk.handlers.admin.historia.handler :as historia]
             [sk.handlers.admin.mision.handler :as mision]
-            [sk.handlers.admin.vision.handler :as vision]))
+            [sk.handlers.admin.vision.handler :as vision]
+            [sk.handlers.admin.titulos.handler :as titulos]
+            [sk.handlers.admin.integrantes.handler :as integrantes]))
 
 (defroutes proutes
   ;; Start users
@@ -46,4 +48,20 @@
   (POST "/admin/vision/save" req [] (vision/vision-save req))
   (POST "/admin/vision/delete" req [] (vision/vision-delete req))
   ;; End vision
+
+  ;; Start titulos
+  (GET "/admin/titulos"  req [] (titulos/titulos req))
+  (POST "/admin/titulos" req [] (titulos/titulos-grid req))
+  (GET "/admin/titulos/edit/:id" [id] (titulos/titulos-form id))
+  (POST "/admin/titulos/save" req [] (titulos/titulos-save req))
+  (POST "/admin/titulos/delete" req [] (titulos/titulos-delete req))
+  ;; End titulos
+
+  ;; Start integrantes
+  (GET "/admin/integrantes"  req [] (integrantes/integrantes req))
+  (POST "/admin/integrantes" req [] (integrantes/integrantes-grid req))
+  (GET "/admin/integrantes/edit/:id" [id] (integrantes/integrantes-form id))
+  (POST "/admin/integrantes/save" req [] (integrantes/integrantes-save req))
+  (POST "/admin/integrantes/delete" req [] (integrantes/integrantes-delete req))
+  ;; End integrantes
   )

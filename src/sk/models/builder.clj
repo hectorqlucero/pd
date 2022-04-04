@@ -278,12 +278,12 @@
     (spit (str path "/view.clj") (build-skeleton-view options))))
 (map grid-col (build-grid-columns "contactos"))
 (comment
-  (build-grid-skeleton {:folder "historia"
-                        :title "Historia"
-                        :table "historia"
-                        :args "{:sort-extra \"nombre,apel_paterno,apel_materno\"}"
+  (build-grid-skeleton {:folder "integrantes"
+                        :title "Integrantes"
+                        :table "integrantes"
+                        :args "{:sort-extra \"nombre,paterno,materno\"}"
                         :secure 1
-                        :link "/admin/historia"
+                        :link "/admin/integrantes"
                         :root "src/sk/handlers/admin/"})
   (build-skeleton {:folder "historia"
                    :title "Historia"

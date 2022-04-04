@@ -17,6 +17,37 @@
   (Query db [get-users-sql]))
 ;; End get-users
 
+;; Start get-titulos
+(def get-titulos-sql
+  "SELECT
+   id AS value,
+   descripcion AS text
+   FROM titulos
+   ORDER BY
+   descripcion")
+
+(defn get-titulos
+  "Gets all titulos from database ex: (get-titulos)"
+  []
+  (Query db [get-titulos-sql]))
+;; End get-titulos
+
+;; Start get-titulo
+(def get-titulo-sql
+  "
+  SELECT
+   descripcion
+   FROM titulos
+   WHERE
+   id = ?
+   ")
+
+(defn get-titulo
+  "Gets a titulo from database ex: (get-titulo 1)"
+  [id]
+  (:descripcion (first (Query db [get-titulo-sql id]))))
+;; End get-titulo
+
 ;; Start get-users-email
 (def get-users-email-sql
   "SELECT
