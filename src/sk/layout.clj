@@ -36,8 +36,8 @@
       [:li-nav-item [:a.nav-link {:href "/contactos"} "Contacto"]]
       [:li-nav-item [:a.nav-link {:href "/patrocinadores"} "Patrocinadores"]]
       [:li-nav-item [:a.nav-link {:href "/veterinarias"} "Veterinarias de Apoyo"]]
-      [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Voluntarios"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       (when
        (or
         (= (user-level) "A")
@@ -70,8 +70,8 @@
       [:li-nav-item [:a.nav-link {:href "/contactos"} "Contacto"]]
       [:li-nav-item [:a.nav-link {:href "/patrocinadores"} "Patrocinadores"]]
       [:li-nav-item [:a.nav-link {:href "/veterinarias"} "Veterinarias de Apoyo"]]
-      [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Voluntarios"]]
+      [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       [:li.nav-item [:a.nav-link {:href "/home/login"} "Conectar"]]]]]))
 
 (defn menus-none []
