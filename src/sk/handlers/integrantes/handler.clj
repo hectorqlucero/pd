@@ -5,7 +5,7 @@
    [sk.handlers.integrantes.view :refer [integrantes-view integrantes-scripts]]))
 
 (defn integrantes [_]
-  (let [title "Vision"
+  (let [title "Integrantes"
         ok (get-session-id)
         js (integrantes-scripts)
         content (integrantes-view title)]

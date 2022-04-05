@@ -8,7 +8,8 @@
             [sk.handlers.historia.handler :as historia]
             [sk.handlers.mision.handler :as mision]
             [sk.handlers.vision.handler :as vision]
-            [sk.handlers.integrantes.handler :as integrantes]))
+            [sk.handlers.integrantes.handler :as integrantes]
+            [sk.handlers.contactos.handler :as contactos]))
 
 (defroutes open-routes
   ;; Start table_ref
@@ -59,4 +60,8 @@
   ;; Start integrantes
   (GET "/integrantes" request [] (integrantes/integrantes request))
   ;; End integrantes
+
+  ;; Start contactos
+  (GET "/contactos" request [] (contactos/contactos request))
+  ;; End contactos
   )

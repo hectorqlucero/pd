@@ -11,6 +11,7 @@
    [:a.dropdown-item {:href "/admin/vision"} "Vision"]
    [:a.dropdown-item {:href "/admin/titulos"} "Titulo"]
    [:a.dropdown-item {:href "/admin/integrantes"} "Integrantes"]
+   [:a.dropdown-item {:href "/admin/contactos"} "Contactos"]
    [:a.dropdown-item {:href "/admin/users"} "Usuarios"]))
 
 (defn menus-private []
@@ -30,7 +31,7 @@
       [:li-nav-item [:a.nav-link {:href "/mision"} "Misión"]]
       [:li-nav-item [:a.nav-link {:href "/vision"} "Vision"]]
       [:li-nav-item [:a.nav-link {:href "/integrantes"} "Integrantes"]]
-      [:li-nav-item [:a.nav-link {:href "#"} "Contacto"]]
+      [:li-nav-item [:a.nav-link {:href "/contactos"} "Contacto"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Patrocinadores"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Veterinarias de Apoyo"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
@@ -64,7 +65,7 @@
       [:li-nav-item [:a.nav-link {:href "/mision"} "Misión"]]
       [:li-nav-item [:a.nav-link {:href "/vision"} "Vision"]]
       [:li-nav-item [:a.nav-link {:href "/integrantes"} "Integrantes"]]
-      [:li-nav-item [:a.nav-link {:href "#"} "Contacto"]]
+      [:li-nav-item [:a.nav-link {:href "/contactos"} "Contacto"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Patrocinadores"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Veterinarias de Apoyo"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
