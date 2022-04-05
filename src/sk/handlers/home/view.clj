@@ -3,37 +3,38 @@
 
 (defn main-view []
   (list
-   [:div.container
-    [:div#myCarousel.carousel.slide {:data-ride "carousel"}
-     [:ul.carousel-indicators
-      [:li.active {:data-target "#myCarousel"
-                   :data-slide-to "0"}]
-      [:li {:data-target "#myCarousel"
-            :data-slide-to "1"}]
-      [:li {:data-target "#myCarousel"
-            :data-slide-to "2"}]]
-     [:div.carousel-inner {:style "width:100%;height:100%"}
-      [:div.carousel-item.active
-       [:img {:src "images/dog1.jpg"
-              :alt "Primero"
-              :width "1100"
-              :height "500"}]]
-      [:div.carousel-item
-       [:img {:src "images/dog2.jpg"
-              :alt "Segundo"
-              :width "1100"
-              :height "500"}]]
-      [:div.carousel-item
-       [:img {:src "images/dog3.jpg"
-              :alt "Tercero"
-              :width "1100"
-              :height "500"}]]]
-     [:a.carousel-control-prev {:href "#myCarousel"
-                                :data-slide "prev"}
-      [:span.carousel-control-prev-icon "]"]]
-     [:a.carousel-control-next {:href "#myCarousel"
-                                :data-slide "next"}
-      [:span.carousel-control-next-icon]]]]))
+   [:div#myCarousel.carousel.slide {:data-ride "carousel"}
+    [:div.carousel-inner
+     [:div#banner-one.carousel-item.active
+      [:picture
+       [:source {:media "(max-width: 425px)"
+                 :srcset "images/dog1.jpg"}]
+       [:source {:media "(max-width: 768px)"
+                 :srcset "images/dog1.jpg"}]
+       [:img.d-block.w-100 {:src "images/dog1.jpg"}]]]
+     [:div#banner-two.carousel-item
+      [:picture
+       [:source {:media "(max-width: 425px)"
+                 :srcset "images/dog2.jpg"}]
+       [:source {:media "(max-width: 768px)"
+                 :srcset "images/dog2.jpg"}]
+       [:img.d-block.w-100 {:src "images/dog2.jpg"}]]]
+     [:div#banner-three.carousel-item
+      [:picture
+       [:source {:media "(max-width: 425px)"
+                 :srcset "images/dog3.jpg"}]
+       [:source {:media "(max-width: 768px)"
+                 :srcset "images/dog3.jpg"}]
+       [:img.d-block.w-100 {:src "images/dog3.jpg"}]]]]]
+   [:a.carousel-control-prev {:href "#myCarousel"
+                              :role "button"
+                              :data-slide "prev"}
+    [:span.sr-only "Previous"]]
+   [:a.carousel-control-next {:href "#myCarousel"
+                              :role "button"
+                              :data-slide "next"}
+    [:span.sr-only "Next"]]))
+
 
 (defn login-view [token]
   (build-form
@@ -97,3 +98,6 @@
         });
     }
    "])
+
+(comment
+  (main-view))
