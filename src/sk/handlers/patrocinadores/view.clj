@@ -6,7 +6,7 @@
   (list
    [:div.card
     [:img.card-img-top.mb-3.w-auto {:src (str (:path user/config) (:imagen row))
-                                    :style "max-width:10%;height:auto;"
+                                    :style "max-width:20%;height:auto;"
                                     :alt (:comp row)}]
     [:div.card-body
      [:h5.card-title (:comp row)]
