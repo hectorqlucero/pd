@@ -572,12 +572,12 @@
     (spit (str path "/view.clj") (build-skeleton-view options))))
 
 (comment
-  (build-grid-skeleton {:folder "patrocinadores"
-                        :title "Patrocinadores"
-                        :table "patrocinadores"
-                        :args "{:sort-extra \"contacto\"}"
+  (build-grid-skeleton {:folder "veterinarias"
+                        :title "Veterinarias"
+                        :table "veterinarias"
+                        :args "{:sort-extra \"comp\"}"
                         :secure 1
-                        :link "/admin/patrocinadores"
+                        :link "/admin/veterinarias"
                         :root "src/sk/handlers/admin/"})
   (build-skeleton {:folder "contactos"
                    :title "Contactos"

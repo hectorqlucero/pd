@@ -8,7 +8,8 @@
             [sk.handlers.admin.titulos.handler :as titulos]
             [sk.handlers.admin.integrantes.handler :as integrantes]
             [sk.handlers.admin.contactos.handler :as contactos]
-            [sk.handlers.admin.patrocinadores.handler :as patrocinadores]))
+            [sk.handlers.admin.patrocinadores.handler :as patrocinadores]
+            [sk.handlers.admin.veterinarias.handler :as veterinarias]))
 
 (defroutes proutes
   ;; Start users
@@ -82,4 +83,12 @@
   (POST "/admin/patrocinadores/save" req [] (patrocinadores/patrocinadores-save req))
   (POST "/admin/patrocinadores/delete" req [] (patrocinadores/patrocinadores-delete req))
   ;; End patrocinadores
+
+  ;; Start veterinarias
+  (GET "/admin/veterinarias"  req [] (veterinarias/veterinarias req))
+  (POST "/admin/veterinarias" req [] (veterinarias/veterinarias-grid req))
+  (GET "/admin/veterinarias/edit/:id" [id] (veterinarias/veterinarias-form id))
+  (POST "/admin/veterinarias/save" req [] (veterinarias/veterinarias-save req))
+  (POST "/admin/veterinarias/delete" req [] (veterinarias/veterinarias-delete req))
+  ;; End veterinarias
   )
