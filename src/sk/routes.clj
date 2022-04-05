@@ -9,7 +9,8 @@
             [sk.handlers.mision.handler :as mision]
             [sk.handlers.vision.handler :as vision]
             [sk.handlers.integrantes.handler :as integrantes]
-            [sk.handlers.contactos.handler :as contactos]))
+            [sk.handlers.contactos.handler :as contactos]
+            [sk.handlers.patrocinadores.handler :as patrocinadores]))
 
 (defroutes open-routes
   ;; Start table_ref
@@ -64,4 +65,8 @@
   ;; Start contactos
   (GET "/contactos" request [] (contactos/contactos request))
   ;; End contactos
+
+  ;; Start patrocinadores
+  (GET "/patrocinadores" request [] (patrocinadores/patrocinadores request))
+  ;; End patrocinadores
   )

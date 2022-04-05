@@ -7,7 +7,8 @@
             [sk.handlers.admin.vision.handler :as vision]
             [sk.handlers.admin.titulos.handler :as titulos]
             [sk.handlers.admin.integrantes.handler :as integrantes]
-            [sk.handlers.admin.contactos.handler :as contactos]))
+            [sk.handlers.admin.contactos.handler :as contactos]
+            [sk.handlers.admin.patrocinadores.handler :as patrocinadores]))
 
 (defroutes proutes
   ;; Start users
@@ -73,4 +74,12 @@
   (POST "/admin/contactos/save" req [] (contactos/contactos-save req))
   (POST "/admin/contactos/delete" req [] (contactos/contactos-delete req))
   ;; End contactos
+
+  ;; Start patrocinadores
+  (GET "/admin/patrocinadores"  req [] (patrocinadores/patrocinadores req))
+  (POST "/admin/patrocinadores" req [] (patrocinadores/patrocinadores-grid req))
+  (GET "/admin/patrocinadores/edit/:id" [id] (patrocinadores/patrocinadores-form id))
+  (POST "/admin/patrocinadores/save" req [] (patrocinadores/patrocinadores-save req))
+  (POST "/admin/patrocinadores/delete" req [] (patrocinadores/patrocinadores-delete req))
+  ;; End patrocinadores
   )
