@@ -34,6 +34,9 @@ An application that caters to pets
    resources/migrations
 
   ```
+  
+## Database migrations
+Go to project directory and type: lein migrate
 
 ## Running
 Go to project directory and type: Lein run
