@@ -3,12 +3,12 @@
 
 (defn vision-view [title]
   (let [title title
-        data (:descripcion (first (get-rows "visión")))]
+        data (:descripcion (first (get-rows "vision")))]
     (list
      [:div.card
       [:div.card-body
        [:div.card-title title]
-       [:p.card-text data]]])))
+       [:p.card-text.text-justify data]]])))
 
 (defn vision-scripts []
   nil)

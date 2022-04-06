@@ -3,12 +3,12 @@
 
 (defn mision-view [title]
   (let [title title
-        data (:descripcion (first (get-rows "misión")))]
+        data (:descripcion (first (get-rows "mision")))]
     (list
      [:div.card
       [:div.card-body
        [:div.card-title title]
-       [:p.card-text data]]])))
+       [:p.card-text.text-justify data]]])))
 
 (defn mision-scripts []
   nil)

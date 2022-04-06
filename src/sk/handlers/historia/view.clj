@@ -8,7 +8,7 @@
      [:div.card
       [:div.card-body
        [:div.card-title title]
-       [:p.card-text data]]])))
+       [:p.card-text.text-justify data]]])))
 
 (defn historia-scripts []
   nil)
