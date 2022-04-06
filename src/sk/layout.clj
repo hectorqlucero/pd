@@ -14,6 +14,7 @@
    [:a.dropdown-item {:href "/admin/contactos"} "Contactos"]
    [:a.dropdown-item {:href "/admin/patrocinadores"} "Patrocinadores"]
    [:a.dropdown-item {:href "/admin/veterinarias"} "Veterinarias"]
+   [:a.dropdown-item {:href "/admin/voluntarios"} "Voluntarios"]
    [:a.dropdown-item {:href "/admin/users"} "Usuarios"]))
 
 (defn menus-private []
@@ -36,7 +37,7 @@
       [:li-nav-item [:a.nav-link {:href "/contactos"} "Contacto"]]
       [:li-nav-item [:a.nav-link {:href "/patrocinadores"} "Patrocinadores"]]
       [:li-nav-item [:a.nav-link {:href "/veterinarias"} "Veterinarias de Apoyo"]]
-      [:li-nav-item [:a.nav-link {:href "#"} "Voluntarios"]]
+      [:li-nav-item [:a.nav-link {:href "/voluntarios"} "Voluntarios"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       (when
        (or
@@ -70,7 +71,7 @@
       [:li-nav-item [:a.nav-link {:href "/contactos"} "Contacto"]]
       [:li-nav-item [:a.nav-link {:href "/patrocinadores"} "Patrocinadores"]]
       [:li-nav-item [:a.nav-link {:href "/veterinarias"} "Veterinarias de Apoyo"]]
-      [:li-nav-item [:a.nav-link {:href "#"} "Voluntarios"]]
+      [:li-nav-item [:a.nav-link {:href "/voluntarios"} "Voluntarios"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       [:li.nav-item [:a.nav-link {:href "/home/login"} "Conectar"]]]]]))
 

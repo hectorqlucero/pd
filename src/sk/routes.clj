@@ -11,7 +11,8 @@
             [sk.handlers.integrantes.handler :as integrantes]
             [sk.handlers.contactos.handler :as contactos]
             [sk.handlers.patrocinadores.handler :as patrocinadores]
-            [sk.handlers.veterinarias.handler :as veterinarias]))
+            [sk.handlers.veterinarias.handler :as veterinarias]
+            [sk.handlers.voluntarios.handler :as voluntarios]))
 
 (defroutes open-routes
   ;; Start table_ref
@@ -74,4 +75,8 @@
   ;; Start veterinarias
   (GET "/veterinarias" request [] (veterinarias/veterinarias request))
   ;; End veterinarias
+
+  ;; Start voluntarios
+  (GET "/voluntarios" request [] (voluntarios/voluntarios request))
+  ;; End voluntarios
   )
