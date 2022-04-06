@@ -30,7 +30,7 @@ footer {
   display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .desk-img {
     display: none !important;
   }
@@ -38,6 +38,17 @@ footer {
   .mobile-img {
     display: block;
   }
+}
+
+.full-width-image {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+}
+
+.full-width-image img {
+  width: 100%;
 }
 
 .loader,

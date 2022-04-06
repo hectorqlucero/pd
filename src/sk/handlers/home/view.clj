@@ -12,24 +12,21 @@
                   :srcset "images/dog1.jpg"}]
         [:source {:media "(max-width: 768px)"
                   :srcset "images/dog1.jpg"}]
-        [:img.d-block.w-100 {:src "images/dog1.jpg"
-                             :style "max-width: 60%;height:auto;"}]]]
+        [:img.img-fluid {:src "images/dog1.jpg"}]]]
       [:div#banner-two.carousel-item
        [:picture
         [:source {:media "(max-width: 425px)"
                   :srcset "images/dog2.jpg"}]
         [:source {:media "(max-width: 768px)"
                   :srcset "images/dog2.jpg"}]
-        [:img.d-block.w-100 {:src "images/dog2.jpg"
-                             :style "max-width:60%;height:auto;"}]]]
+        [:img.img-fluid {:src "images/dog2.jpg"}]]]
       [:div#banner-three.carousel-item
        [:picture
         [:source {:media "(max-width: 425px)"
                   :srcset "images/dog3.jpg"}]
         [:source {:media "(max-width: 768px)"
                   :srcset "images/dog3.jpg"}]
-        [:img.d-block.w-100 {:src "images/dog3.jpg"
-                             :style "max-width:60%;height:auto;"}]]]]]]
+        [:img.img-fluid {:src "images/dog3.jpg"}]]]]]]
    [:a.carousel-control-prev {:href "#myCarousel"
                               :role "button"
                               :data-slide "prev"}
