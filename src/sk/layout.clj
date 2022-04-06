@@ -7,8 +7,8 @@
 (defn build-admin []
   (list
    [:a.dropdown-item {:href "/admin/historia"} "Historia"]
-   [:a.dropdown-item {:href "/admin/mision"} "Mision"]
-   [:a.dropdown-item {:href "/admin/vision"} "Vision"]
+   [:a.dropdown-item {:href "/admin/mision"} "Misión"]
+   [:a.dropdown-item {:href "/admin/vision"} "Visión"]
    [:a.dropdown-item {:href "/admin/titulos"} "Titulo"]
    [:a.dropdown-item {:href "/admin/integrantes"} "Integrantes"]
    [:a.dropdown-item {:href "/admin/contactos"} "Contactos"]

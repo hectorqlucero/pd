@@ -3,7 +3,7 @@
 
 (defn mision-view [title]
   (let [title title
-        data (:descripcion (first (get-rows "mision")))]
+        data (:descripcion (first (get-rows "misión")))]
     (list
      [:div.card
       [:div.card-body
