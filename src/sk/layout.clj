@@ -32,7 +32,7 @@
      [:ul.navbar-nav
       [:li-nav-item [:a.nav-link {:href "/historia"} "Historia"]]
       [:li-nav-item [:a.nav-link {:href "/mision"} "Misión"]]
-      [:li-nav-item [:a.nav-link {:href "/vision"} "Vision"]]
+      [:li-nav-item [:a.nav-link {:href "/vision"} "Visión"]]
       [:li-nav-item [:a.nav-link {:href "/integrantes"} "Integrantes"]]
       [:li-nav-item [:a.nav-link {:href "/contactos"} "Contacto"]]
       [:li-nav-item [:a.nav-link {:href "/patrocinadores"} "Patrocinadores"]]
@@ -66,7 +66,7 @@
      [:ul.navbar-nav
       [:li-nav-item [:a.nav-link {:href "/historia"} "Historia"]]
       [:li-nav-item [:a.nav-link {:href "/mision"} "Misión"]]
-      [:li-nav-item [:a.nav-link {:href "/vision"} "Vision"]]
+      [:li-nav-item [:a.nav-link {:href "/vision"} "Visión"]]
       [:li-nav-item [:a.nav-link {:href "/integrantes"} "Integrantes"]]
       [:li-nav-item [:a.nav-link {:href "/contactos"} "Contacto"]]
       [:li-nav-item [:a.nav-link {:href "/patrocinadores"} "Patrocinadores"]]
