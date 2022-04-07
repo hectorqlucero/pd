@@ -6,6 +6,7 @@
 
 (defn build-admin []
   (list
+   [:a.dropdown-item {:href "/admin/eventos"} "Eventos"]
    [:a.dropdown-item {:href "/admin/historia"} "Historia"]
    [:a.dropdown-item {:href "/admin/mision"} "Misión"]
    [:a.dropdown-item {:href "/admin/vision"} "Visión"]
@@ -15,6 +16,8 @@
    [:a.dropdown-item {:href "/admin/patrocinadores"} "Patrocinadores"]
    [:a.dropdown-item {:href "/admin/veterinarias"} "Veterinarias"]
    [:a.dropdown-item {:href "/admin/voluntarios"} "Voluntarios"]
+   [:a.dropdown-item {:href "/admin/pais"} "Pais"]
+   [:a.dropdown-item {:href "/admin/cuentas"} "Cuentas Bancarias"]
    [:a.dropdown-item {:href "/admin/users"} "Usuarios"]))
 
 (defn menus-private []
@@ -30,6 +33,7 @@
      [:span.navbar-toggler-icon]]
     [:div#collapsibleNavbar.collapse.navbar-collapse
      [:ul.navbar-nav
+      [:li-nav-item [:a.nav-link {:href "/eventos/list"} "Eventos"]]
       [:li-nav-item [:a.nav-link {:href "/historia"} "Historia"]]
       [:li-nav-item [:a.nav-link {:href "/mision"} "Misión"]]
       [:li-nav-item [:a.nav-link {:href "/vision"} "Visión"]]
@@ -38,6 +42,7 @@
       [:li-nav-item [:a.nav-link {:href "/patrocinadores"} "Patrocinadores"]]
       [:li-nav-item [:a.nav-link {:href "/veterinarias"} "Veterinarias de Apoyo"]]
       [:li-nav-item [:a.nav-link {:href "/voluntarios"} "Voluntarios"]]
+      [:li-nav-item [:a.nav-link {:href "/cuentas"} "Cuentas Bancarias"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       (when
        (or
@@ -64,6 +69,7 @@
      [:span.navbar-toggler-icon]]
     [:div#collapsibleNavbar.collapse.navbar-collapse
      [:ul.navbar-nav
+      [:li-nav-item [:a.nav-link {:href "/eventos/list"} "Eventos"]]
       [:li-nav-item [:a.nav-link {:href "/historia"} "Historia"]]
       [:li-nav-item [:a.nav-link {:href "/mision"} "Misión"]]
       [:li-nav-item [:a.nav-link {:href "/vision"} "Visión"]]
@@ -72,6 +78,7 @@
       [:li-nav-item [:a.nav-link {:href "/patrocinadores"} "Patrocinadores"]]
       [:li-nav-item [:a.nav-link {:href "/veterinarias"} "Veterinarias de Apoyo"]]
       [:li-nav-item [:a.nav-link {:href "/voluntarios"} "Voluntarios"]]
+      [:li-nav-item [:a.nav-link {:href "/cuentas"} "Cuentas Bancarias"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       [:li.nav-item [:a.nav-link {:href "/home/login"} "Conectar"]]]]]))
 

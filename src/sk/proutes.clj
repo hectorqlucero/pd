@@ -10,7 +10,9 @@
             [sk.handlers.admin.contactos.handler :as contactos]
             [sk.handlers.admin.patrocinadores.handler :as patrocinadores]
             [sk.handlers.admin.veterinarias.handler :as veterinarias]
-            [sk.handlers.admin.voluntarios.handler :as voluntarios]))
+            [sk.handlers.admin.voluntarios.handler :as voluntarios]
+            [sk.handlers.admin.pais.handler :as pais]
+            [sk.handlers.admin.cuentas.handler :as cuentas]))
 
 (defroutes proutes
   ;; Start users
@@ -100,4 +102,20 @@
   (POST "/admin/voluntarios/save" req [] (voluntarios/voluntarios-save req))
   (POST "/admin/voluntarios/delete" req [] (voluntarios/voluntarios-delete req))
   ;; End voluntarios
+
+  ;; Start pais
+  (GET "/admin/pais"  req [] (pais/pais req))
+  (POST "/admin/pais" req [] (pais/pais-grid req))
+  (GET "/admin/pais/edit/:id" [id] (pais/pais-form id))
+  (POST "/admin/pais/save" req [] (pais/pais-save req))
+  (POST "/admin/pais/delete" req [] (pais/pais-delete req))
+  ;; End pais
+
+  ;; Start cuentas
+  (GET "/admin/cuentas"  req [] (cuentas/cuentas req))
+  (POST "/admin/cuentas" req [] (cuentas/cuentas-grid req))
+  (GET "/admin/cuentas/edit/:id" [id] (cuentas/cuentas-form id))
+  (POST "/admin/cuentas/save" req [] (cuentas/cuentas-save req))
+  (POST "/admin/cuentas/delete" req [] (cuentas/cuentas-delete req))
+  ;; End cuentas
   )

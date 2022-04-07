@@ -5,7 +5,7 @@
   {:width   152
    :height  152
    :style   "cursor:pointer;cursor:hand;"
-   :src     (str "/images/Calendario_" month-name ".jpeg")
+   :src     (str "/images/Calendario_" month-name ".jpg")
    :onclick (str "showEvents(" year "," month ")")})
 
 (defn eventos-view [title year]

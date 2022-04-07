@@ -2,6 +2,35 @@
   (:require [sk.models.crud :refer [db Query]]
             [sk.models.util :refer [current_year get-image parse-int zpl]]))
 
+;; Start get-pais
+(def get-pais-sql
+  "
+  SELECT
+   id AS value,
+   descripcion AS text
+   FROM pais
+   ORDER BY
+   descripcion
+   ")
+
+(defn get-pais []
+  (Query db [get-pais-sql]))
+;; End get-pais
+
+;; Start get-pais-id
+(def get-pais-id-sql
+  "
+  SELECT
+   descripcion
+   FROM pais
+   WHERE
+   id = ?
+   ")
+
+(defn get-pais-id [id]
+  (:descripcion (first (Query db [get-pais-id-sql id]))))
+;; End get-pais-id
+
 ;; Start get-users
 (def get-users-sql
   "SELECT
@@ -119,3 +148,7 @@
   (let [sql (str "SELECT " field " FROM " table " WHERE " idname "='" idvalue "'")
         row (first (Query db sql))]
     ((keyword field) row)))
+
+(comment
+  (get-pais-id 1)
+  (get-pais))

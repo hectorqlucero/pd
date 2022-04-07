@@ -12,7 +12,8 @@
             [sk.handlers.contactos.handler :as contactos]
             [sk.handlers.patrocinadores.handler :as patrocinadores]
             [sk.handlers.veterinarias.handler :as veterinarias]
-            [sk.handlers.voluntarios.handler :as voluntarios]))
+            [sk.handlers.voluntarios.handler :as voluntarios]
+            [sk.handlers.cuentas.handler :as cuentas]))
 
 (defroutes open-routes
   ;; Start table_ref
@@ -25,6 +26,8 @@
   (GET "/table_ref/levels" [] (generate-string (table_ref/level-options)))
   (GET "/table_ref/get-titulo/:id" [id] (table_ref/get-titulo id))
   (GET "/table_ref/get-titulos" [] (generate-string (table_ref/get-titulos)))
+  (GET "/table_ref/get-paises" [] (generate-string (table_ref/get-pais)))
+  (GET "/table_ref/get-pais/:id" [id] (table_ref/get-pais-id id))
   ;; End table_ref
 
   ;; Start home
@@ -79,4 +82,8 @@
   ;; Start voluntarios
   (GET "/voluntarios" request [] (voluntarios/voluntarios request))
   ;; End voluntarios
+
+  ;; Start cuentas
+  (GET "/cuentas" request [] (cuentas/cuentas request))
+  ;; End cuentas
   )
