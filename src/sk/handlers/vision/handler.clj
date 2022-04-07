@@ -5,7 +5,7 @@
    [sk.handlers.vision.view :refer [vision-view vision-scripts]]))
 
 (defn vision [_]
-  (let [title "Vision"
+  (let [title "Visión"
         ok (get-session-id)
         js (vision-scripts)
         content (vision-view title)]

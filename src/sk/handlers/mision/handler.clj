@@ -5,7 +5,7 @@
    [sk.handlers.mision.view :refer [mision-view mision-scripts]]))
 
 (defn mision [_]
-  (let [title "Mision"
+  (let [title "Misión"
         ok (get-session-id)
         js (mision-scripts)
         content (mision-view title)]
