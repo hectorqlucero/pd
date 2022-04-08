@@ -12,7 +12,10 @@
             [sk.handlers.admin.veterinarias.handler :as veterinarias]
             [sk.handlers.admin.voluntarios.handler :as voluntarios]
             [sk.handlers.admin.pais.handler :as pais]
-            [sk.handlers.admin.cuentas.handler :as cuentas]))
+            [sk.handlers.admin.cuentas.handler :as cuentas]
+            [sk.handlers.admin.fotos.handler :as fotos]
+            [sk.handlers.admin.adopciones.handler :as adopciones]
+            [sk.handlers.admin.videos.handler :as videos]))
 
 (defroutes proutes
   ;; Start users
@@ -118,4 +121,28 @@
   (POST "/admin/cuentas/save" req [] (cuentas/cuentas-save req))
   (POST "/admin/cuentas/delete" req [] (cuentas/cuentas-delete req))
   ;; End cuentas
+
+  ;; Start fotos
+  (GET "/admin/fotos"  req [] (fotos/fotos req))
+  (POST "/admin/fotos" req [] (fotos/fotos-grid req))
+  (GET "/admin/fotos/edit/:id" [id] (fotos/fotos-form id))
+  (POST "/admin/fotos/save" req [] (fotos/fotos-save req))
+  (POST "/admin/fotos/delete" req [] (fotos/fotos-delete req))
+  ;; End fotos
+
+  ;; Start adopciones
+  (GET "/admin/adopciones"  req [] (adopciones/adopciones req))
+  (POST "/admin/adopciones" req [] (adopciones/adopciones-grid req))
+  (GET "/admin/adopciones/edit/:id" [id] (adopciones/adopciones-form id))
+  (POST "/admin/adopciones/save" req [] (adopciones/adopciones-save req))
+  (POST "/admin/adopciones/delete" req [] (adopciones/adopciones-delete req))
+  ;; End adopciones
+
+  ;; Start videos
+  (GET "/admin/videos"  req [] (videos/videos req))
+  (POST "/admin/videos" req [] (videos/videos-grid req))
+  (GET "/admin/videos/edit/:id" [id] (videos/videos-form id))
+  (POST "/admin/videos/save" req [] (videos/videos-save req))
+  (POST "/admin/videos/delete" req [] (videos/videos-delete req))
+  ;; End videos
   )

@@ -13,7 +13,10 @@
             [sk.handlers.patrocinadores.handler :as patrocinadores]
             [sk.handlers.veterinarias.handler :as veterinarias]
             [sk.handlers.voluntarios.handler :as voluntarios]
-            [sk.handlers.cuentas.handler :as cuentas]))
+            [sk.handlers.cuentas.handler :as cuentas]
+            [sk.handlers.fotos.handler :as fotos]
+            [sk.handlers.adopciones.handler :as adopciones]
+            [sk.handlers.videos.handler :as videos]))
 
 (defroutes open-routes
   ;; Start table_ref
@@ -86,4 +89,16 @@
   ;; Start cuentas
   (GET "/cuentas" request [] (cuentas/cuentas request))
   ;; End cuentas
+
+  ;; Start fotos
+  (GET "/fotos" request [] (fotos/fotos request))
+  ;; End fotos
+
+  ;; Start adopciones
+  (GET "/adopciones" request [] (adopciones/adopciones request))
+  ;; End adopciones
+
+  ;; Start videos
+  (GET "/videos" request [] (videos/videos request))
+  ;; End videos
   )

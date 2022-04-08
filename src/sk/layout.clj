@@ -18,6 +18,9 @@
    [:a.dropdown-item {:href "/admin/voluntarios"} "Voluntarios"]
    [:a.dropdown-item {:href "/admin/pais"} "Pais"]
    [:a.dropdown-item {:href "/admin/cuentas"} "Cuentas Bancarias"]
+   [:a.dropdown-item {:href "/admin/fotos"} "Fotos"]
+   [:a.dropdown-item {:href "/admin/adopciones"} "Fotos - Adopciones"]
+   [:a.dropdown-item {:href "/admin/videos"} "Videos"]
    [:a.dropdown-item {:href "/admin/users"} "Usuarios"]))
 
 (defn menus-private []
@@ -43,6 +46,9 @@
       [:li-nav-item [:a.nav-link {:href "/veterinarias"} "Veterinarias de Apoyo"]]
       [:li-nav-item [:a.nav-link {:href "/voluntarios"} "Voluntarios"]]
       [:li-nav-item [:a.nav-link {:href "/cuentas"} "Cuentas Bancarias"]]
+      [:li-nav-item [:a.nav-link {:href "/fotos"} "Fotos"]]
+      [:li-nav-item [:a.nav-link {:href "/adopciones"} "Fotos - Adopciones"]]
+      [:li-nav-item [:a.nav-link {:href "/videos"} "Videos"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       (when
        (or
@@ -79,6 +85,9 @@
       [:li-nav-item [:a.nav-link {:href "/veterinarias"} "Veterinarias de Apoyo"]]
       [:li-nav-item [:a.nav-link {:href "/voluntarios"} "Voluntarios"]]
       [:li-nav-item [:a.nav-link {:href "/cuentas"} "Cuentas Bancarias"]]
+      [:li-nav-item [:a.nav-link {:href "/fotos"} "Fotos"]]
+      [:li-nav-item [:a.nav-link {:href "/adopciones"} "Fotos - Adopciones"]]
+      [:li-nav-item [:a.nav-link {:href "/videos"} "Videos"]]
       [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
       [:li.nav-item [:a.nav-link {:href "/home/login"} "Conectar"]]]]]))
 
