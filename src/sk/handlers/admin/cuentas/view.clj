@@ -22,6 +22,15 @@
                  required:true,
                  width:'100%'"})
    (build-field
+    {:id "nombre"
+     :name "nombre"
+     :class "easyui-textbox"
+     :prompt "Nombre de la cuenta..."
+     :data-options "label:'Nombre:',
+                    labelPosition:'top',
+                    required:true,
+                    width:'100%'"})
+   (build-field
     {:id "cuenta_numero"
      :name "cuenta_numero"
      :class "easyui-textbox"
@@ -67,6 +76,7 @@
     (list
      [:th {:data-options "field:'pais_id',sortable:true,width:100"
            :formatter "getPais"} "Pais"]
+     [:th {:data-options "field:'nombre',sortable:true,width:100"} "Nombre de cuenta"]
      [:th {:data-options "field:'cuenta_numero',sortable:true,width:100"} "Numero de cuenta"]
      [:th {:data-options "field:'transferencia',sortable:true,width:100"} "Transferencia"]
      [:th {:data-options "field:'deposito_directo',sortable:true,width:100"} "Deposito directo"]
