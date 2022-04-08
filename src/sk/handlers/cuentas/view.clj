@@ -10,6 +10,11 @@
        [:h5.card-title pais]
        [:div.row
         [:div.col.col-xs-6.col-sm-6.col-md-2
+         [:p.card-text "Nombre de la cuenta:"]]
+        [:div.col
+         [:p.card-text (:nombre row)]]]
+       [:div.row
+        [:div.col.col-xs-6.col-sm-6.col-md-2
          [:p.card-text "Numero de cuenta:"]]
         [:div.col
          [:p.card-text (:cuenta_numero row)]]]
