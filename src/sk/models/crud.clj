@@ -232,7 +232,7 @@
     (let [value (str ((keyword field) params))
           field-type (st/lower-case field-type)]
       (cond
-        (st/includes? field-type "varchar") (crud-capitalize-words value)
+        (st/includes? field-type "varchar") value
         (st/includes? field-type "char") (st/upper-case value)
         (st/includes? field-type "date") (crud-format-date-internal value)
         :else value))
