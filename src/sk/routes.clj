@@ -16,7 +16,8 @@
             [sk.handlers.cuentas.handler :as cuentas]
             [sk.handlers.fotos.handler :as fotos]
             [sk.handlers.adopciones.handler :as adopciones]
-            [sk.handlers.videos.handler :as videos]))
+            [sk.handlers.videos.handler :as videos]
+            [sk.handlers.articulos.handler :as articulos]))
 
 (defroutes open-routes
   ;; Start table_ref
@@ -101,4 +102,8 @@
   ;; Start videos
   (GET "/videos" request [] (videos/videos request))
   ;; End videos
+
+  ;; Start articulos
+  (GET "/articulos" request [] (articulos/articulos request))
+  ;; End articulos
   )

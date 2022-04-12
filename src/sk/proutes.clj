@@ -15,7 +15,8 @@
             [sk.handlers.admin.cuentas.handler :as cuentas]
             [sk.handlers.admin.fotos.handler :as fotos]
             [sk.handlers.admin.adopciones.handler :as adopciones]
-            [sk.handlers.admin.videos.handler :as videos]))
+            [sk.handlers.admin.videos.handler :as videos]
+            [sk.handlers.admin.articulos.handler :as articulos]))
 
 (defroutes proutes
   ;; Start users
@@ -145,4 +146,12 @@
   (POST "/admin/videos/save" req [] (videos/videos-save req))
   (POST "/admin/videos/delete" req [] (videos/videos-delete req))
   ;; End videos
+
+  ;; Start articulos
+  (GET "/admin/articulos"  req [] (articulos/articulos req))
+  (POST "/admin/articulos" req [] (articulos/articulos-grid req))
+  (GET "/admin/articulos/edit/:id" [id] (articulos/articulos-form id))
+  (POST "/admin/articulos/save" req [] (articulos/articulos-save req))
+  (POST "/admin/articulos/delete" req [] (articulos/articulos-delete req))
+  ;; End articulos
   )

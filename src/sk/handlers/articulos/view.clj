@@ -1,5 +1,5 @@
-(ns sk.handlers.veterinarias.view
-  (:require [sk.handlers.veterinarias.model :refer [get-rows]]
+(ns sk.handlers.articulos.view
+  (:require [sk.handlers.articulos.model :refer [get-rows]]
             [sk.user :as user]))
 
 (defn build-body [row]
@@ -12,14 +12,19 @@
      [:h5.card-title (:comp row)]
      [:div.row
       [:div.col.col-xs-6.col-sm-6.col-md-1
-       [:p.card-text.font-weight-bold "Informacion:"]]
+       [:p.card-text.font-weight-bold "Articulo:"]]
       [:div.col
-       [:p.card-text.text-justify (:descripcion row)]]]
+       [:p.card-text (:descripcion row)]]]
      [:div.row
       [:div.col.col-xs-6.col-sm-6.col-md-1
-       [:p.card-text.font-weight-bold "Domicilio:"]]
+       [:p.card-text.font-weight-bold "Precio:"]]
       [:div.col
-       [:p.card-text (:direccion row)]]]
+       [:p.card-text (str "$" (clojure.pprint/cl-format nil "~,2f" (:precio row)))]]]
+     [:div.row
+      [:div.col.col-xs-6.col-sm-6.col-md-1
+       [:p.card-text.font-weight-bold "Contacto:"]]
+      [:div.col
+       [:p.card-text (:contacto row)]]]
      [:div.row
       [:div.col.col-xs-6.col-sm-6.col-md-1
        [:p.card-text.font-weight-bold "Telefono:"]]
@@ -27,23 +32,23 @@
        [:p.card-text (:telefono row)]]]
      [:div.row
       [:div.col.col-xs-6.col-sm-6.col-md-1
-       [:p.card-text.font-weight-bold "Urgencias:"]]
+       [:p.card-text.font-weight-bold "Whats UP:"]]
       [:div.col
-       [:p.card-text (:urgencias row)]]]
+       [:p.card-text (:whats_up row)]]]
      [:div.row
       [:div.col.col-xs-6.col-sm-6.col-md-1
        [:p.card-text.font-weight-bold "Email:"]]
       [:div.col
        [:p.card-text (:email row)]]]]]))
 
-(defn veterinarias-view [_]
-  (let [rows (get-rows "veterinarias")]
+(defn articulos-view [_]
+  (let [rows (get-rows "articulos")]
     (list
      (map build-body rows))))
 
-(defn veterinarias-scripts []
+(defn articulos-scripts []
   nil)
 
 (comment
-  (veterinarias-view "veterinarias")
-  (get-rows "veterinarias"))
+  (articulos-view "articulos")
+  (get-rows "articulos"))

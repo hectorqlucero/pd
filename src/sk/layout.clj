@@ -21,6 +21,7 @@
    [:a.dropdown-item {:href "/admin/fotos"} "Fotos"]
    [:a.dropdown-item {:href "/admin/adopciones"} "Fotos - Adopciones"]
    [:a.dropdown-item {:href "/admin/videos"} "Videos"]
+   [:a.dropdown-item {:href "/admin/articulos"} "Articulos de Venta"]
    [:a.dropdown-item {:href "/admin/users"} "Usuarios"]))
 
 (defn menus-private []
@@ -49,7 +50,7 @@
       [:li-nav-item [:a.nav-link {:href "/fotos"} "Fotos"]]
       [:li-nav-item [:a.nav-link {:href "/adopciones"} "Fotos - Adopciones"]]
       [:li-nav-item [:a.nav-link {:href "/videos"} "Videos"]]
-      [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
+      [:li-nav-item [:a.nav-link {:href "/articulos"} "Articulos de venta"]]
       (when
        (or
         (= (user-level) "A")
@@ -88,7 +89,7 @@
       [:li-nav-item [:a.nav-link {:href "/fotos"} "Fotos"]]
       [:li-nav-item [:a.nav-link {:href "/adopciones"} "Fotos - Adopciones"]]
       [:li-nav-item [:a.nav-link {:href "/videos"} "Videos"]]
-      [:li-nav-item [:a.nav-link {:href "#"} "Articulos de venta"]]
+      [:li-nav-item [:a.nav-link {:href "/articulos"} "Articulos de venta"]]
       [:li.nav-item [:a.nav-link {:href "/home/login"} "Conectar"]]]]]))
 
 (defn menus-none []
